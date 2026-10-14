@@ -13,17 +13,29 @@
     <form id="expense-form">
       <input type="text" id="description" placeholder="What did you spend on?" required>
       <input type="number" id="amount" placeholder="Amount (Rs.)" min="0" step="0.01" required>
-<select id="category">
+      <select id="category">
         <option value="Food">Food</option>
         <option value="Transport">Transport</option>
         <option value="Bills">Bills</option>
         <option value="Fun">Fun</option>
         <option value="Other">Other</option>
       </select>
+      <input type="date" id="date" required>
       <button type="submit" id="submit-btn">Add</button>
       <button type="button" id="cancel-btn" hidden>Cancel</button>
     </form>
+
     <p id="error-message"></p>
+    
+    <div class="filter-bar">
+      <label for="filter">Show:</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="day">Today</option>
+        <option value="week">This week</option>
+        <option value="month">This month</option>
+      </select>
+    </div>
 
     <h2>Total: Rs. <span id="total">0.00</span></h2>
     <h3>By category</h3>
