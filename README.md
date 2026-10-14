@@ -10,3 +10,5 @@ A simple expense tracker built with HTML, CSS and JavaScript.
 
 ## Run it
 Open `index.html` in a browser.
+
+**Live demo:** https://YOUR-USERNAME.github.io/expense-tracker/
