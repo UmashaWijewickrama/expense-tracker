@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 550px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+#expense-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#expense-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#description {
+  flex: 2;
+}
+
+#amount {
+  flex: 1;
+}
+
+button {
+  padding: 10px 16px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #1b5e20;
+}
+
+#expense-list {
+  list-style: none;
+  padding: 0;
+}
+
+#expense-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#expense-list li span:first-child {
+  flex: 1;
+}
+
+.delete-btn {
+  margin-left: 12px;
+  padding: 6px 10px;
+  background: #c62828;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #8e0000;
+}
+
+#expense-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#expense-form input,
+#expense-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#description {
+  flex: 1 1 100%;
+}
+
+#amount {
+  flex: 1;
+}
+
+#category {
+  flex: 1;
+  background: white;
+}
+
+#summary-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#summary-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+#error-message {
+  color: #c62828;
+  font-size: 14px;
+  min-height: 18px;
+  margin: 0 0 10px;
+}
+
+.date {
+  color: #777;
+  font-size: 12px;
+}
+
+.edit-btn {
+  margin-left: 12px;
+  padding: 6px 10px;
+  background: #1565c0;
+  font-size: 12px;
+}
+
+.edit-btn:hover {
+  background: #0d47a1;
+}
+
+#cancel-btn {
+  background: #757575;
+}
+
+#cancel-btn:hover {
+  background: #424242;
+}
