@@ -460,7 +460,8 @@ form.addEventListener("submit", function (event) {
     showError("Amount must be greater than 0.");
     return;
   }
-   if (date === "") {
+  
+  if (date === "") {
     showError("Please pick a date.");
     return;
   }
@@ -469,6 +470,7 @@ form.addEventListener("submit", function (event) {
     return;
   }
   showError("");
+
   if (editingIndex === null) {
     expenses.push({
       description: description,
