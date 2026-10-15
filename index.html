@@ -7,42 +7,97 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="hero">
+    <h1>💸 Expense Tracker</h1>
+    <p>Know where your money goes.</p>
+  </header>
+
   <main class="container">
-    <h1>Expense Tracker</h1>
 
-    <form id="expense-form">
-      <input type="text" id="description" placeholder="What did you spend on?" required>
-      <input type="number" id="amount" placeholder="Amount (Rs.)" min="0" step="0.01" required>
-      <select id="category">
-        <option value="Food">Food</option>
-        <option value="Transport">Transport</option>
-        <option value="Bills">Bills</option>
-        <option value="Fun">Fun</option>
-        <option value="Other">Other</option>
-      </select>
-      <input type="date" id="date" required>
-      <button type="submit" id="submit-btn">Add</button>
-      <button type="button" id="cancel-btn" hidden>Cancel</button>
-    </form>
+    <!-- Summary cards (follow the list filter) -->
+    <section class="stats">
+      <div class="stat-card">
+        <span class="stat-label">Total spent</span>
+        <span class="stat-value">Rs. <span id="total">0.00</span></span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Expenses</span>
+        <span class="stat-value" id="count">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Top category</span>
+        <span class="stat-value" id="top-category">-</span>
+      </div>
+    </section>
 
-    <p id="error-message"></p>
-    
-    <div class="filter-bar">
-      <label for="filter">Show:</label>
-      <select id="filter">
-        <option value="all">All</option>
-        <option value="day">Today</option>
-        <option value="week">This week</option>
-        <option value="month">This month</option>
-      </select>
+    <div class="grid">
+      <!-- Add / edit form -->
+      <section class="card">
+        <h2 id="form-title">Add expense</h2>
+        <form id="expense-form">
+          <input type="text" id="description" placeholder="What did you spend on?" required>
+          <input type="number" id="amount" placeholder="Amount (Rs.)" min="0" step="0.01" required>
+          <select id="category">
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Bills">Bills</option>
+            <option value="Fun">Fun</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="date" id="date" required>
+          <button type="submit" id="submit-btn">Add</button>
+          <button type="button" id="cancel-btn" hidden>Cancel</button>
+        </form>
+        <p id="error-message"></p>
+      </section>
+
+      <!-- Trend chart -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Spending trend</h2>
+          <div class="pills" id="trend-tabs">
+            <button type="button" class="pill active" data-trend="day">Daily</button>
+            <button type="button" class="pill" data-trend="week">Weekly</button>
+            <button type="button" class="pill" data-trend="month">Monthly</button>
+          </div>
+        </div>
+        <div class="chart-box">
+          <canvas id="trend-chart"></canvas>
+        </div>
+        <p class="insight" id="trend-insight"></p>
+      </section>
     </div>
 
-    <h2>Total: Rs. <span id="total">0.00</span></h2>
-    <h3>By category</h3>
-    <ul id="summary-list"></ul>
-    <ul id="expense-list"></ul>
+    <div class="grid">
+      <!-- Expense list -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Expenses</h2>
+          <div class="pills" id="filter-pills">
+            <button type="button" class="pill active" data-filter="all">All</button>
+            <button type="button" class="pill" data-filter="day">Today</button>
+            <button type="button" class="pill" data-filter="week">This week</button>
+            <button type="button" class="pill" data-filter="month">This month</button>
+          </div>
+        </div>
+        <ul id="expense-list"></ul>
+      </section>
+
+      <!-- Category breakdown -->
+      <section class="card">
+        <h2>By category</h2>
+        <div class="chart-box">
+          <canvas id="category-chart"></canvas>
+        </div>
+        <ul id="summary-list"></ul>
+      </section>
+    </div>
+
   </main>
 
+  <footer class="footer">Your data is saved in this browser only.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

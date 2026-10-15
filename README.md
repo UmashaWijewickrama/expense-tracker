@@ -14,6 +14,7 @@ A simple, lightweight expense tracker built with plain HTML, CSS and JavaScript.
 - **Live totals** that update automatically for whatever is currently shown
 - **Input validation** with friendly error messages for empty descriptions, invalid amounts and missing dates
 - **Persistent storage** using the browser's `localStorage`, so your data survives a page refresh
+- **Spending trend charts**(daily, weekly, monthly) and Category breakdown doughnut chart.
 
 ## Tech Stack
 
@@ -24,6 +25,7 @@ A simple, lightweight expense tracker built with plain HTML, CSS and JavaScript.
 | Logic     | Vanilla JavaScript (no frameworks) |
 | Storage   | Browser `localStorage`             |
 | Hosting   | GitHub Pages                       |
+| Charts    | Chart.js                           |
 
 ## Getting Started
 
@@ -75,8 +77,6 @@ expense-tracker/
 - There is no export or backup feature yet.
 
 ## Future Improvements
-
-- Chart of spending per category
 - Custom date range filter
 - Export to CSV
 - Monthly budget with warnings when it is exceeded
